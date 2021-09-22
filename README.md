@@ -1,4 +1,4 @@
-# HSDES-LAB1: PULP Virtual Platform Setup and C programming
+# APAI-LAB01: PULP Virtual Platform Setup and C programming
 The target device for the lab sessions is the multi-core [PULP](https://github.com/pulp-platform/pulp) platform. 
 The PULP Virtual Platform simulator GVSOC, which is included within the [PULP SDK](https://github.com/pulp-platform/pulp-sdk), will be used during the class. 
 To install the GVSOC Simulator and setup your environment, you can follow one of the two options described below. 
@@ -11,18 +11,19 @@ The Virtual Machine including a pre-installed PULP SDK and Virtual Platform simu
 The machine can be used in VirtualBox, VMware (instructions below) or other hosts (not tested - you are on your own...).
 
 If you want to use VirtualBox:
-1. Download **pulp_box_2021_v2.ova** from this OneDrive [link](https://liveunibo-my.sharepoint.com/:u:/g/personal/f_conti_unibo_it/EU8Gw122r-BImShYmL1GOrMBm60NO9TcYjmc0nmICOwYnw?e=DE4yph) (5.1 GB) 
-2. Install and open [**VirtualBox**](https://www.virtualbox.org/)
-3. Go to **File > Import Appliance...**
-4. Select pulp_box_2021_v2.ova as the Appliance to import
-5. If needed, change the destination folder, then click on Import
-6. In the main VirtualBox window, click on the new virtual machine, then on Start
+1. Download **pulp_box_2021_dory.ova** from this OneDrive [link](https://liveunibo-my.sharepoint.com/:u:/g/personal/alessio_burrello_unibo_it/EXY5-2rEc9tLumFtT-uOm4QBczYiNHQMheFO7REqHrNUUg?e=KS3cew) (5.5 GB)
+    * The link works with *unibo* accounts. 
+3. Install and open [**VirtualBox**](https://www.virtualbox.org/)
+4. Go to **File > Import Appliance...**
+5. Select pulp_box_2021_dory.ova as the Appliance to import
+6. If needed, change the destination folder, then click on Import
+7. In the main VirtualBox window, click on the new virtual machine, then on Start
 
 If you want to use VMware Workstation Player 16:
-1. Download pulp_box_2021_v2.ova from this OneDrive link (5.1 GB)
+1. Download pulp_box_2021_dory.ova from this OneDrive link (5.5 GB)
 2. Install and open [**VMware Workstation Player 16**](https://www.vmware.com/it/products/workstation-player/workstation-player-evaluation.html). Notice that "Player" is the free version of WMware, while "Pro" must be paid.
 3. Go to Player> File > open ...
-4. Select pulp_box_2021_v2.ova as the Appliance to import
+4. Select pulp_box_2021_dory.ova as the Appliance to import
 5. If needed, change the destination folder, then click on Import
 6. If WMware gets you a warning, force the import of the VM image provided
 7. In the main WMware window, click on the new virtual machine, then on "Play virtual machine"
