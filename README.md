@@ -11,7 +11,7 @@ The Virtual Machine including a pre-installed PULP SDK and Virtual Platform simu
 The machine can be used in VirtualBox, VMware (instructions below) or other hosts (not tested - you are on your own...).
 
 If you want to use VirtualBox:
-1. Download **pulp_box_2021_dory.ova** from this OneDrive [link](https://liveunibo-my.sharepoint.com/:u:/g/personal/alessio_burrello_unibo_it/EXY5-2rEc9tLumFtT-uOm4QBczYiNHQMheFO7REqHrNUUg?e=KS3cew) (5.5 GB)
+1. Download **pulp_box_2021_dory.ova** from this OneDrive [link](https://liveunibo-my.sharepoint.com/:u:/g/personal/alessio_burrello_unibo_it/EYDij6QsMKFBp7pOJx5eQAwBG2FHH59c9fs9a4eorDd9ew?e=f8bJ0O) (8.1 GB)
     * The link works with *unibo* accounts. 
 3. Install and open [**VirtualBox**](https://www.virtualbox.org/)
 4. Go to **File > Import Appliance...**
