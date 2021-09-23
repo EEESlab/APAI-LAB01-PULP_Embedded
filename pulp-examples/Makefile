@@ -1,7 +1,7 @@
 
 APP = scan-matrix
 
-APP_SRCS	+= test.c
+APP_SRCS	+= scan-matrix.c
 APP_CFLAGS 	+= -O3 -g
 APP_LDFLAGS += 
 
