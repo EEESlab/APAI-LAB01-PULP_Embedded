@@ -45,7 +45,7 @@ int main()
     generate_series(a, square_size);
 
     // We can either scan the elements with 1 index, as before
-    // or we can scan the matrix using to indeces.
+    // or we can scan the matrix using 2 indeces (i and j).
     // Suppose we want to find whether an element (el) is present in a matrix or not, e.g. el=144:
     int el = 46368;
 
