@@ -1,4 +1,4 @@
-# Helloworld from PULP
+# Matrix search with PULP
 
 Open a new shell and source the PULP environment:
 ~~~~~shell
