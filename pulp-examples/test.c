@@ -47,7 +47,7 @@ int main()
     // We can either scan the elements with 1 index, as before
     // or we can scan the matrix using 2 indeces (i and j).
     // Suppose we want to find whether an element (el) is present in a matrix or not, e.g. el=144:
-    int el = 46368;
+    int el = 144;
 
     for (int i=0; i<side; i++){
         for (int j=0; j<side; j++){
