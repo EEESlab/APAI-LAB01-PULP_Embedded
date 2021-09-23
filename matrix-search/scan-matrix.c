@@ -12,7 +12,6 @@
 // Filling the array with a Fibonacci series, and printing the values
 int generate_series(int *v, int sq_size)
 {
-
     *v = 0;
     printf("%d \n", *(v));
     *(v+1) = 1;
@@ -23,7 +22,6 @@ int generate_series(int *v, int sq_size)
         *(v+i) = *(v+i-2)+*(v+i-1);
         printf("%d \n", *(v+i));
     }
-
     return 0;
  }
 
@@ -46,13 +44,20 @@ int main()
 
     // We can either scan the elements with 1 index, as before
     // or we can scan the matrix using 2 indeces (i and j).
-    // Suppose we want to find whether an element (el) is present in a matrix or not, e.g. el=144:
-    int el = 144;
+    // Suppose we want to find whether an element (el) is present in a matrix or not, e.g. el=233:
+    int el = 234;
+    int found = 0;
 
     for (int i=0; i<N; i++){
         for (int j=0; j<M; j++){
-            if (a[i*M+j]==el) {printf("el=144 >> FOUND\n");}
+            if (a[i*M+j]==el) {
+              printf(">> el=144 FOUND in position:\n");
+              printf("ROW: %d COLUMN: %d \n", i, j);
+              found = 1;
+            }
         }
     }
+
+    if (found==0) {printf(">> el NOT FOUND!\n");}
 
 }
