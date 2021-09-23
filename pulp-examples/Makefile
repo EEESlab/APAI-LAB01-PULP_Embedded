@@ -1,5 +1,5 @@
 
-APP = test
+APP = scan-matrix
 
 APP_SRCS	+= test.c
 APP_CFLAGS 	+= -O3 -g
