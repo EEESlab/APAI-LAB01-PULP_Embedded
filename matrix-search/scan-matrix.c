@@ -8,22 +8,40 @@
  * Authors: Manuele Rusci, UniBO (manuele.rusci@unibo.it)
  */
 #include "pmsis.h"
+#include "functions.h"
 
-// Filling the array with a Fibonacci series, and printing the values
-int generate_series(int *v, int sq_size)
-{
-    *v = 0;
-    printf("%d \n", *(v));
-    *(v+1) = 1;
-    printf("%d \n", *(v+1));
+// structure definition
+struct coordinates {
+    int ROW, COLUMN;
+};
+typedef struct coordinates Struct;
 
-    for(int i=2;i<sq_size;++i)
-    {
-        *(v+i) = *(v+i-2)+*(v+i-1);
-        printf("%d \n", *(v+i));
-    }
-    return 0;
- }
+Struct matrix_search(int *a, int element, int N_size, int M_size){
+
+  // found=1 if the element is found in the matrix, otherwise found=0
+  int found = 0;
+  Struct s;
+
+  for (int i=0; i<N_size; i++){
+      for (int j=0; j<M_size; j++){
+          // notice that we move in the matrix with 2 indeces (i, j)
+          if (*(a+i*M_size+j)==element){
+              printf(">> el=%d FOUND\n", element);
+              s.ROW = i;
+              s.COLUMN = j;
+              found = 1;
+          }
+      }
+  }
+
+  if (found==0) {
+      printf(">> el NOT FOUND!\n");
+      s.ROW = -1;
+      s.COLUMN = -1;
+  }
+
+  return s;
+}
 
 
 int main()
@@ -44,20 +62,15 @@ int main()
 
     // We can either scan the elements with 1 index, as before
     // or we can scan the matrix using 2 indeces (i and j).
-    // Suppose we want to find whether an element (el) is present in a matrix or not, e.g. el=233:
-    int el = 234;
-    int found = 0;
+    // Suppose we want to find whether an element (el) is present in a matrix or not:
+    int el = 610;
 
-    for (int i=0; i<N; i++){
-        for (int j=0; j<M; j++){
-            if (a[i*M+j]==el) {
-              printf(">> el=144 FOUND in position:\n");
-              printf("ROW: %d COLUMN: %d \n", i, j);
-              found = 1;
-            }
-        }
-    }
+    // structure that will contain the coordinates of the searched element
+    Struct coord;
+    coord.ROW = -1;
+    coord.COLUMN = -1;
 
-    if (found==0) {printf(">> el NOT FOUND!\n");}
+    coord = matrix_search(a, el, N, M);
+    if (coord.ROW!=-1) {printf("ROW: %d  COLUMN: %d\n", coord.ROW, coord.COLUMN);}
 
 }
