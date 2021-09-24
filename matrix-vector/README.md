@@ -1,8 +1,12 @@
+# Matrix Vector product
 
-APP = scan-matrix
+Open a new shell and source the PULP environment:
+~~~~~shell
+source /pulp/sourceme.sh
+~~~~~
 
-APP_SRCS	+= scan-matrix.c generator.c
-APP_CFLAGS 	+= -O3 -g
-APP_LDFLAGS +=
-
-include $(RULES_DIR)/pmsis_rules.mk
+Run the helloworld:
+~~~~~shell
+cd matrix-vector
+make clean all run
+~~~~~
