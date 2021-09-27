@@ -36,6 +36,8 @@ int vector_sum(unsigned char * A_ar, int size){
 
 int main()
 {
+	printf("This example program computes the sum of the first %d integer numbers!\n", N);
+
 	// initialize the array and get the expected result
 	int expected_result = init_array(array_1, N);
 
