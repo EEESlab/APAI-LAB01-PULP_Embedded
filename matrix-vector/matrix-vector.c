@@ -14,7 +14,7 @@ int gemv(int N, int M, float * mat, float *vec, float * output_vec){
 
     for (int i=0; i<N; i++){
       for (int j=0; j<M; j++){
-          // vectors are scrolled using a single index, while the matrix (which is still defined as a contiguous array) is scanned using two indeces
+          // vectors are scrolled using a single index, while the matrix (that still is defined as a contiguous array) is scanned using two indeces
           *(output_vec+i) += *(mat+i*M+j)*(*(vec+j));
       }
     }
