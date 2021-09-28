@@ -10,11 +10,14 @@
  */
 #include "pmsis.h"
 
+
 // defines
 #define N 5
 #define M 6
+#define mat_el 1.2
+#define vec_el 2.0
 
-// input variables 
+// input variables
 float matrix[N*M]; // the matrix as an array of size N*M
 float vector[M];
 
@@ -22,7 +25,7 @@ float vector[M];
 float output_vec[N];  // N*M x M*1 -> N*1
 
 // extra array used to check the output values
-float output_vec_golden[N];  
+float output_vec_golden[N];
 
 
 // generic matrix-vector multiplication
@@ -41,15 +44,15 @@ int gemv(int size_N, int size_M, float * mat_i, float *vec_i, float * vec_o){
 
 int main()
 {
-  // Initialization of operands and reset the ouput 
-  for (int i=0; i<(N*M); i++) { 
-    matrix[i] = i; 
+  // Initialization of operands and reset the ouput
+  for (int i=0; i<(N*M); i++) {
+    matrix[i] = mat_el;
   }
-  for (int i=0; i<M; i++) { 
-    vector[i] = 10-i; 
+  for (int i=0; i<M; i++) {
+    vector[i] = vec_el;
   }
-  for (int i=0; i<N; i++) { 
-    output_vec[i] = 0.0f; 
+  for (int i=0; i<N; i++) {
+    output_vec[i] = 0.0f;
   }
 
   // call the matrix-vector fucntion
@@ -57,13 +60,20 @@ int main()
 
   // print and check the results
   printf("The %d output elements are: ", N);
-  for (int i=0; i<N; i++) { 
-    printf("%f, ", output_vec[i]); 
+  for (int i=0; i<N; i++) {
+    printf("%f, ", output_vec[i]);
   }
   printf("\n");
 
   // check here the results
   // check output_vec vs output_vec_golden
-  printf("Are the results OK?");
-
+  int correctness = 1;
+  for (int i=0; i<N; i++) {
+    if ((output_vec[i]>M*mat_el*vec_el+0.000001) || (output_vec[i]<M*mat_el*vec_el-0.000001))
+    {
+      correctness = 0;
+      break;
+    }
+  }
+  printf(correctness ? "RESULTS MATCHING\n" : "RESULTS NOT MATCHING\n");
 }
