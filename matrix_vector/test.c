@@ -14,8 +14,12 @@
 // defines
 #define N 5
 #define M 6
-#define mat_el 1.2
-#define vec_el 2.0
+#define mat_el (1.2f)  // matrix constant values
+#define vec_el (2.0f)  // vector constant values
+
+//utils
+#define ABS(x)  ((x)>0?(x):(-x))
+#define EPS     (0.00000001f)
 
 // input variables
 float matrix[N*M]; // the matrix as an array of size N*M
@@ -23,9 +27,6 @@ float vector[M];
 
 // output variable
 float output_vec[N];  // N*M x M*1 -> N*1
-
-// extra array used to check the output values
-float output_vec_golden[N];
 
 
 // generic matrix-vector multiplication
@@ -66,10 +67,9 @@ int main()
   printf("\n");
 
   // check here the results
-  // check output_vec vs output_vec_golden
   int correctness = 1;
   for (int i=0; i<N; i++) {
-    if ((output_vec[i]>M*mat_el*vec_el+0.000001) || (output_vec[i]<M*mat_el*vec_el-0.000001))
+    if (ABS( output_vec[i]- (M*mat_el*vec_el)) > EPS )
     {
       correctness = 0;
       break;
