@@ -16,9 +16,6 @@
 #define mat_el (2)  // matrix constant values
 #define vec_el (4)  // vector constant values
 
-//utils
-#define ABS(x)  ((x)>0?(x):(-x))
-#define EPS     (0.00000001f)
 
 // input variables
 int matrix[N*M]; // the matrix as an array of size N*M
@@ -68,7 +65,7 @@ int main()
   // check here the results
   int correctness = 1;
   for (int i=0; i<N; i++) {
-    if (ABS( output_vec[i]- (M*mat_el*vec_el)) > EPS )
+    if ( output_vec[i] != (M*mat_el*vec_el)) 
     {
       correctness = 0;
       break;
