@@ -10,27 +10,26 @@
  */
 #include "pmsis.h"
 
-
 // defines
 #define N 5
-#define M 6
-#define mat_el (1.2f)  // matrix constant values
-#define vec_el (2.0f)  // vector constant values
+#define M 600
+#define mat_el (2)  // matrix constant values
+#define vec_el (4)  // vector constant values
 
 //utils
 #define ABS(x)  ((x)>0?(x):(-x))
 #define EPS     (0.00000001f)
 
 // input variables
-float matrix[N*M]; // the matrix as an array of size N*M
-float vector[M];
+int matrix[N*M]; // the matrix as an array of size N*M
+int vector[M];
 
 // output variable
-float output_vec[N];  // N*M x M*1 -> N*1
+int output_vec[N];  // N*M x M*1 -> N*1
 
 
 // generic matrix-vector multiplication
-int gemv(int size_N, int size_M, float * mat_i, float *vec_i, float * vec_o){
+int gemv(int size_N, int size_M, int* mat_i, int*vec_i, int* vec_o){
 
     for (int i=0; i<size_N; i++){
       for (int j=0; j<size_M; j++){
@@ -53,7 +52,7 @@ int main()
     vector[i] = vec_el;
   }
   for (int i=0; i<N; i++) {
-    output_vec[i] = 0.0f;
+    output_vec[i] = 0;
   }
 
   // call the matrix-vector fucntion
@@ -62,7 +61,7 @@ int main()
   // print and check the results
   printf("The %d output elements are: ", N);
   for (int i=0; i<N; i++) {
-    printf("%f, ", output_vec[i]);
+    printf("%d, ", output_vec[i]);
   }
   printf("\n");
 
