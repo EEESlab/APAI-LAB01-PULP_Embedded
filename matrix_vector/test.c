@@ -29,14 +29,18 @@ int output_vec[N];  // N*M x M*1 -> N*1
 
 
 // generic matrix-vector multiplication
-int gemv(int size_N, int size_M, int* mat_i, int*vec_i, int* vec_o){
+int __attribute__((noinline)) gemv(int size_N, int size_M, int* mat_i, int*vec_i, int* vec_o){
 
+    int temp;
     for (int i=0; i<size_N; i++){
+      temp = 0;
       for (int j=0; j<size_M; j++){
           // mulitply accumulate operation
-          vec_o[i] += mat_i[i*size_M+j] * vec_i[j];
+          temp += mat_i[i*size_M+j] * vec_i[j];
+          // vec_o[i] += mat_i[i*size_M+j] * vec_i[j];
           //*(vec_o+i) += *(mat_i+i*M+j)*(*(vec_i+j)); // try to uncomment this and comment the above line
       }
+      vec_o[i] = temp;
     }
 
 }
