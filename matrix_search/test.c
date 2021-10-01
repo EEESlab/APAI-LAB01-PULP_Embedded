@@ -69,7 +69,7 @@ int main()
         printf("Element NOT found!\n");
     } else {
         printf("Found coordinates -> ROW: %d  COLUMN: %d\n", coord.ROW, coord.COLUMN);
-        if ((coord.ROW == r_gold) && (coord.ROW == r_gold))
+        if ((coord.ROW == r_gold) && (coord.COLUMN == c_gold))
             printf("Test OK!\n");
         else
             printf("Test NOT OK\n");
