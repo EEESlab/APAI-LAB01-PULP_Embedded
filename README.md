@@ -72,8 +72,7 @@ Then restart your system.
 ~~~~~shell
 docker-compose run --rm pulp
 ~~~~~
-A new shell will open inside the container, in the `/pulp/workspace` folder; such folder is a volume, meaning that you will see it on your host too (you can share files between the host and the container using such folder).
-NB: inside the container, you are the `root` user.
+A new shell will open inside the container, in the `/home/pulp/workspace` folder (you're the `pulp` user); such folder is a volume, meaning that you will see it on your host too (you can share files between the host and the container using such folder).
 
 4. After terminating the container (with Ctrl+D), close the resources.
 ~~~~~shell
