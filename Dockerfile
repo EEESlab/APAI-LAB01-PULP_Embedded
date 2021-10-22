@@ -21,8 +21,7 @@ RUN git clone --recursive https://github.com/pulp-platform/pulp-riscv-gnu-toolch
     make && cd .. && rm -r pulp-riscv-gnu-toolchain
 
 # Create "pulp" user
-RUN groupadd --gid 5000 pulp && \
-    useradd --home-dir /home/pulp --create-home --uid 5000 --gid 5000 --shell /bin/sh --skel /dev/null pulp
+RUN useradd -d /home/pulp -ms /bin/bash -g root -G sudo -p pulp pulp
 USER pulp
 WORKDIR /home/pulp
 
@@ -34,8 +33,9 @@ RUN mkdir sdk && cd sdk && \
     source configs/pulp-open.sh && \
     make build
 
-# Set working directory
-RUN mkdir workspace
+# Create shared volume
+RUN mkdir workspace && chown pulp workspace
 WORKDIR /home/pulp/workspace
+VOLUME /home/pulp/workspace
 
-CMD source /home/pulp/sdk/configs/pulp-open.sh && exec /bin/bash
+CMD source ../sdk/configs/pulp-open.sh && exec /bin/bash
