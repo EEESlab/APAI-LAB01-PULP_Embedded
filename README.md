@@ -53,6 +53,32 @@ source configs/pulp-open.sh
 make build
 ~~~~~
 
+### *Option 3 (alternative)*: Install the PULP-SDK in a Docker container
+To install the PULP-SDK inside a Docker container running Ubuntu 18.04, follow these steps:
+
+1. Install `docker` and `docker-compose` on your host machine.
+If you use on a Debian-based Linux distro, you can do it as follows:
+~~~~~shell
+sudo apt install docker docker-compose
+~~~~~
+
+2. Add your user to the `docker` group to avoid having to use `sudo`.
+~~~~~shell
+sudo usermod -aG docker $USER
+~~~~~
+Then restart your system.
+
+3. Run the container (NB the first run may take several minutes, as it needs to build the Docker image).
+~~~~~shell
+docker-compose run --rm pulp
+~~~~~
+A new shell will open inside the container, in the `/home/pulp/workspace` folder (you're the `pulp` user); such folder is a volume, meaning that you will see it on your host too (you can share files between the host and the container using such folder).
+
+4. After terminating the container (with Ctrl+D), close the resources.
+~~~~~shell
+docker-compose down
+~~~~~
+
 ## Test your GVSOC Installation
 After completing the GVSOC setup, you can download some example code in your preferred working directory and run the _Helloworld_ on the PULP platform.
 ~~~~~shell
