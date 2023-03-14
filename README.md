@@ -81,8 +81,7 @@ docker-compose down
 ~~~~~
 
 ### *Option 4 (alternative for Mac M1/M1-Pro/M2)*: Download a PULP Virtual Machine for ARM64
-If you want to use VirtualBox:
-1. Download **PULPBox-UTM.utm** from this OneDrive [link](https://liveunibo-my.sharepoint.com/:f:/g/personal/f_conti_unibo_it/Em1JpeNgHJBKue8RyEA2X-0ByPev-zeYGO6NmH229_Hxxg?e=ygUkIU) (4 GB)
+1. Download **PULPBox-UTM.utm** from this OneDrive [link](https://liveunibo-my.sharepoint.com/:f:/g/personal/f_conti_unibo_it/Em1JpeNgHJBKue8RyEA2X-0BLZmAyyt-aCWnLR-WjX6hmw?e=KfELG4) (4 GB)
     * The link works with *unibo* accounts. 
 2. Install and open [**UTM**](https://mac.getutm.app/)
 3. Open the downloaded PULPBox.
