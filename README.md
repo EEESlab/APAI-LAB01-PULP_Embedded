@@ -9,6 +9,7 @@ To install the GVSOC Simulator and setup your environment, you can follow one of
 ### *Option 1 (suggested)*: Download the PULP Virtual Machine
 The Virtual Machine including a pre-installed PULP SDK and Virtual Platform simulator can be found here [Link](https://github.com/pulp-platform/pulp-sdk) (5GB).
 The machine can be used in VirtualBox, VMware (instructions below) or other hosts (not tested - you are on your own...).
+**Note: if you want to run this on a Mac with an ARM-based processor (M1, M1-Pro, M2, ...), go to Option 4 (MacOS Virtual Machine) or 3 (Docker).**
 
 If you want to use VirtualBox:
 1. Download **pulp_box_2021_dory.ova** from this OneDrive [link](https://liveunibo-my.sharepoint.com/:u:/g/personal/alessio_burrello_unibo_it/EYDij6QsMKFBp7pOJx5eQAwBG2FHH59c9fs9a4eorDd9ew?e=f8bJ0O) (8.1 GB)
@@ -79,6 +80,12 @@ A new shell will open inside the container, in the `/home/pulp/workspace` folder
 docker-compose down
 ~~~~~
 
+### *Option 4 (alternative for Mac M1/M1-Pro/M2)*: Download a PULP Virtual Machine for ARM64
+1. Download **PULPBox-UTM.utm** from this OneDrive [link](https://liveunibo-my.sharepoint.com/:f:/g/personal/f_conti_unibo_it/Em1JpeNgHJBKue8RyEA2X-0BLZmAyyt-aCWnLR-WjX6hmw?e=KfELG4) (4 GB)
+    * The link works with *unibo* accounts. 
+2. Install and open [**UTM**](https://mac.getutm.app/)
+3. Open the downloaded PULPBox.
+
 ## Test your GVSOC Installation
 After completing the GVSOC setup, you can download some example code in your preferred working directory and run the _Helloworld_ on the PULP platform.
 ~~~~~shell
@@ -93,7 +100,7 @@ If you see an *Hello* from PULP, your setup is fine! ;)
 ### Source the PULP SDK every time you open a new shell
 To run example code on the PULP Virtual Plaform, you must export the RISC-V Compiler path and source the platorm configurafion file every time a shell is opened.
 
-If you are using the PULP Virtual Machine, we prepared a bash script that does this for you. For each new shell, all you need to do is running:
+If you are using the PULP Virtual Machine (Option 1), we prepared a bash script that does this for you. For each new shell, all you need to do is running:
 ~~~~~shell
 source /pulp/sourceme.sh
 ~~~~~
